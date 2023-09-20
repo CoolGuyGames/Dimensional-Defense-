@@ -20,6 +20,8 @@ public class Tower : MonoBehaviour
     public bool isHeld;
     private bool canPlace = true;
 
+    public CircleCollider2D towerCollider;
+
     // Update is called once per frame
     void Update()
     {
@@ -52,6 +54,11 @@ public class Tower : MonoBehaviour
         if(canShoot && closestEnemy != null && !isHeld && Vector2.Distance(closestEnemy.transform.position, this.transform.position) <= radius)
         {
             StartCoroutine("Shoot");
+        }
+
+        if(isHeld == false)
+        {
+
         }
     }
 
