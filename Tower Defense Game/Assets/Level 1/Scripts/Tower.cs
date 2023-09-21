@@ -22,6 +22,8 @@ public class Tower : MonoBehaviour
 
     public CircleCollider2D towerCollider;
 
+    private int inContactWith = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -58,7 +60,11 @@ public class Tower : MonoBehaviour
 
         if(isHeld == false)
         {
-
+            towerCollider.enabled = true;
+        }
+        else
+        {
+            towerCollider.enabled = false;
         }
     }
 
@@ -106,6 +112,15 @@ public class Tower : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("noplace") || collision.CompareTag("Tower"))
+        {
+            canPlace = false;
+            inContactWith++;
+            radiusObject.GetComponent<SpriteRenderer>().color = new Color32(255, 0, 0, 76);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         if(collision.CompareTag("noplace") || collision.CompareTag("Tower"))
         {
             canPlace = false;
@@ -115,10 +130,14 @@ public class Tower : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("noplace"))
+        if (collision.CompareTag("noplace") || collision.CompareTag("Tower"))
         {
-            canPlace = true;
-            radiusObject.GetComponent<SpriteRenderer>().color = new Color32(149, 149, 149, 76);
+            if(inContactWith == 1)
+            {
+                canPlace = true;
+                radiusObject.GetComponent<SpriteRenderer>().color = new Color32(149, 149, 149, 76);
+            }
+            inContactWith--;
         }
     }
 

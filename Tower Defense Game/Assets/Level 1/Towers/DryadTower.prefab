@@ -56,6 +56,7 @@ MonoBehaviour:
   damage: 1
   radius: 5
   isHeld: 1
+  towerCollider: {fileID: -6121531272354049516}
 --- !u!58 &5216793542023324507
 CircleCollider2D:
   m_ObjectHideFlags: 0
