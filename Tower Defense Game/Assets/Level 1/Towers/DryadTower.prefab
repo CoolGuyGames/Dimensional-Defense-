@@ -54,6 +54,7 @@ MonoBehaviour:
   projectileSpeed: 50
   dimension: Earth
   damage: 1
+  cost: 15
   radius: 5
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}
@@ -70,9 +71,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.002928257, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5790715
+  m_Radius: 0.6
 --- !u!50 &5222881180088889379
 Rigidbody2D:
   serializedVersion: 4
@@ -107,9 +108,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.002928257, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5790715
+  m_Radius: 0.6
 --- !u!1 &5216793542830326417
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,8 +218,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7434529340350677416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.005, y: 0.129, z: 0}
-  m_LocalScale: {x: 0.238381, y: 0.238381, z: 0.238381}
+  m_LocalPosition: {x: -0.006, y: 0.132, z: 0}
+  m_LocalScale: {x: 0.24655746, y: 0.24655746, z: 0.24655746}
   m_Children: []
   m_Father: {fileID: 5216793542023324506}
   m_RootOrder: 1

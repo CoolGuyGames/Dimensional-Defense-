@@ -5,13 +5,14 @@ using UnityEngine;
 public class TowerSelectorIconScript : MonoBehaviour
 {
     public GameObject tower;
-    public int cost;
+    private int cost;
 
     private GameManager gameManager;
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        cost = tower.GetComponent<Tower>().cost;
     }
     public void BuyTower()
     {

@@ -17,8 +17,11 @@ public class GameManager : MonoBehaviour
 
     private bool roundInProgress = false;
 
+    public TMP_Text roundChangeText;
+
     private void Update()
     {
+        roundChangeText.text = "Round " + round;
         if (!roundInProgress && rounds.Length >= round)
         {
             StartCoroutine("RoundSpawner");
@@ -41,8 +44,18 @@ public class GameManager : MonoBehaviour
             Instantiate(rounds[round - 1].transform.GetChild(i));
             yield return new WaitForSeconds(roundDelay[round - 1]);
         }
+        StartCoroutine("ChangeRounds");
         yield return new WaitForSeconds(10);
-        round++;
         roundInProgress = false;
     }
-}
+
+    IEnumerator ChangeRounds()
+    {
+        yield return new WaitForSeconds(2.5f);
+        roundChangeText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        round++;
+        yield return new WaitForSeconds(2.5f);
+        roundChangeText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+    }

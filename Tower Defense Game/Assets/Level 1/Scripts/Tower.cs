@@ -13,6 +13,7 @@ public class Tower : MonoBehaviour
     public float projectileSpeed;
     public string dimension;
     public int damage;
+    public int cost;
 
 
     public int radius;
@@ -21,10 +22,15 @@ public class Tower : MonoBehaviour
     private bool canPlace = true;
 
     public CircleCollider2D towerCollider;
+    private GameManager gameManager;
 
     private int inContactWith = 0;
 
     // Update is called once per frame
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Update()
     {
         goToCursor();
@@ -66,6 +72,8 @@ public class Tower : MonoBehaviour
         {
             towerCollider.enabled = false;
         }
+
+        radiusObject.transform.localScale = new Vector3(2 * radius, 2 * radius, 2 * radius);
     }
 
     IEnumerator Shoot()
@@ -86,10 +94,7 @@ public class Tower : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            isHeld = true;
-        }
+        
     }
 
     private void OnMouseExit()
@@ -107,6 +112,11 @@ public class Tower : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Mouse0) && canPlace)
             {
                 isHeld = false;
+            }
+            else if(Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                gameManager.money += cost;
+                Destroy(this.gameObject);
             }
         }
     }
