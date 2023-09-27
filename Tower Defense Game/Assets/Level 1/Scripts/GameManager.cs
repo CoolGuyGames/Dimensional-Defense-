@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
         pointsRoundText.text = "Points: " + money + "\n" + "Round: " + round + "\n" + "Lives: " + lives;
 
-        if(lives <= 0)
+        if (lives <= 0)
         {
             Time.timeScale = 0;
             gameOver.SetActive(true);
@@ -59,3 +59,4 @@ public class GameManager : MonoBehaviour
         roundChangeText.gameObject.SetActive(true);
         yield return new WaitForSeconds(2.5f);
     }
+}

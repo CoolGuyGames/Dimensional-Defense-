@@ -2925,6 +2925,7 @@ MonoBehaviour:
   - 1.5
   - 1.5
   lives: 100
+  roundChangeText: {fileID: 1353557222}
 --- !u!4 &1564065784
 Transform:
   m_ObjectHideFlags: 0
