@@ -37,6 +37,9 @@ public class EnemyMovement : MonoBehaviour
             Vector3 targetPosition = waypoints[currentWaypointIndex].position;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
+            Quaternion toRotate = Quaternion.LookRotation(Vector3.forward, (targetPosition - transform.position).normalized);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, 100  * speed * Time.deltaTime);
+
             if (transform.position == targetPosition)
             {
                 currentWaypointIndex++;
