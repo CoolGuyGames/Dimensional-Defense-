@@ -13,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     public int health;
 
     private GameManager manager;
+    public int moneyOnDeath = 1;
 
     private void Start()
     {
@@ -53,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
 
         if(health <= 0)
         {
-            manager.money++;
+            manager.money += moneyOnDeath;
             Destroy(gameObject);
         }
     }

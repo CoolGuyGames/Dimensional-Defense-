@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         round++;
         yield return new WaitForSeconds(2.5f);
-        roundChangeText.gameObject.SetActive(true);
+        roundChangeText.gameObject.SetActive(false);
         yield return new WaitForSeconds(2.5f);
     }
 }

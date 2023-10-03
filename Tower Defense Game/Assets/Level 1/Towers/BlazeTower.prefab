@@ -50,12 +50,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: 29ed83ec25e01ea439c28048318397ff, type: 3}
   radiusObject: {fileID: 5216793542830326417}
-  shootDelay: 1
+  shootDelay: 3
   projectileSpeed: 50
   dimension: Fire
   damage: 4
   cost: 20
-  radius: 6
+  radius: 4
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}
 --- !u!58 &5216793542023324507

@@ -54,8 +54,8 @@ MonoBehaviour:
   projectileSpeed: 50
   dimension: Earth
   damage: 1
-  cost: 15
-  radius: 5
+  cost: 10
+  radius: 3
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}
 --- !u!58 &5216793542023324507
