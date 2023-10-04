@@ -16,7 +16,7 @@ public class Tower : MonoBehaviour
     public int cost;
 
 
-    public int radius;
+    public float radius;
     private bool canShoot = true;
     public bool isHeld;
     private bool canPlace = true;
@@ -43,13 +43,13 @@ public class Tower : MonoBehaviour
                 if(Vector2.Distance(enemies[i].transform.position, this.transform.position) < Vector2.Distance(closestEnemy.transform.position, this.transform.position) && Vector2.Distance(enemies[i].transform.position, this.transform.position) <= radius)
                     closestEnemy = enemies[i];
             }
-            else if (enemies[0] != null && Vector2.Distance(enemies[0].transform.position, this.transform.position) <= radius)
+            else if (enemies[0] != null)
             {
                 closestEnemy = enemies[0];
             }
         }
 
-        if(closestEnemy != null)
+        if(closestEnemy != null && Vector2.Distance(closestEnemy.transform.position, this.transform.position) <= radius)
         {
             Vector3 offset = closestEnemy.transform.position - transform.position;
 
