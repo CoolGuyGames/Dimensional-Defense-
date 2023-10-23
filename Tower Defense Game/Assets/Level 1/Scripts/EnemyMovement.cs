@@ -30,6 +30,7 @@ public class EnemyMovement : MonoBehaviour
 
         waypoints = waypointsTemp;
     }
+    bool exploding = false;
 
     private void Update()
     {
@@ -46,16 +47,26 @@ public class EnemyMovement : MonoBehaviour
                 currentWaypointIndex++;
             }
         }
-        else
+        else if (exploding == false)
         {
             manager.lives--;
-            Destroy(gameObject);
+            StartCoroutine(Explosion());
         }
 
-        if(health <= 0)
+        if(health <= 0 && !exploding)
         {
             manager.money += moneyOnDeath;
-            Destroy(gameObject);
+            StartCoroutine(Explosion());
         }
+    }
+
+    IEnumerator Explosion()
+    {
+        exploding = true;
+        this.transform.GetComponentInChildren<ParticleSystem>().Play();
+        this.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        this.transform.GetComponent<CircleCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        Destroy(this);
     }
 }

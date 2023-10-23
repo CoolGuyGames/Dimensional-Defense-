@@ -20,7 +20,8 @@ public class ProjectileScript : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            this.transform.Find("Trail").gameObject.SetActive(false);
+            if(this.transform.Find("Trail") != null)
+                this.transform.Find("Trail").gameObject.SetActive(false);
             this.GetComponent<SpriteRenderer>().enabled = false;
             if (dimension == collision.GetComponent<EnemyMovement>().dimension)
                 collision.GetComponent<EnemyMovement>().health -= damage * 2;
