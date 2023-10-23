@@ -112,6 +112,7 @@ public class Tower : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Mouse0) && canPlace)
             {
                 isHeld = false;
+                PlaceParticles();
             }
             else if(Input.GetKeyDown(KeyCode.Mouse1))
             {
@@ -151,5 +152,10 @@ public class Tower : MonoBehaviour
         }
     }
 
+    public ParticleSystem partSystem;
+    private void PlaceParticles()
+    {
+        partSystem.Play();
+    }
 
 }

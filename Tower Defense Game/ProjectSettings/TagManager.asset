@@ -17,10 +17,10 @@ TagManager:
   - UI
   - Enemy
   - Projectile
-  - 
-  - 
-  - 
-  - 
+  - Air
+  - Water
+  - Fire
+  - Earth
   - 
   - 
   - 
@@ -44,4 +44,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Air
+    uniqueID: 527126461
+    locked: 0
+  - name: Earth
+    uniqueID: 2712243657
+    locked: 0
+  - name: Water
+    uniqueID: 1048517845
+    locked: 0
+  - name: Fire
+    uniqueID: 1543564495
+    locked: 0
+  - name: Enemy
+    uniqueID: 2413296469
+    locked: 0
+  - name: Projectile
+    uniqueID: 1142705085
+    locked: 0
+  - name: Tower
+    uniqueID: 3477912951
+    locked: 0
+  - name: Normal
+    uniqueID: 2819422727
     locked: 0
