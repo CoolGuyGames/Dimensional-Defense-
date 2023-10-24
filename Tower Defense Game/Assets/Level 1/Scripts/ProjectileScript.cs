@@ -8,6 +8,11 @@ public class ProjectileScript : MonoBehaviour
     public string dimension;
 
     private ParticleSystem explosionParticles;
+
+    private void Start()
+    {
+        StartCoroutine(DestroyTimed());
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         explosionParticles = this.GetComponentInChildren<ParticleSystem>();
@@ -31,5 +36,11 @@ public class ProjectileScript : MonoBehaviour
             yield return new WaitForSeconds(explosionParticles.main.duration);
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator DestroyTimed()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

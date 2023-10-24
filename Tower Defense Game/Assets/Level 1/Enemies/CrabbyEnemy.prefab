@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimension: Water
+  startSpeed: 2
   speed: 2
+  startingHealth: 3
   health: 3
   moneyOnDeath: 2
 --- !u!58 &4090857752674670080

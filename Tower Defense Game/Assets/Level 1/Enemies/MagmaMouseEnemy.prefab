@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimension: Fire
+  startSpeed: 2
   speed: 2
+  startingHealth: 2
   health: 2
   moneyOnDeath: 3
 --- !u!58 &4090857752674670080

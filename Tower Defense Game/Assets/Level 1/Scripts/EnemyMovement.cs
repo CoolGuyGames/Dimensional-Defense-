@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,11 @@ public class EnemyMovement : MonoBehaviour
     public string dimension;
 
     Transform[] waypoints;
-    public float speed = 5f;
+    public float startSpeed = 5f;
+    public float speed;
     private int currentWaypointIndex = 0;
 
+    public int startingHealth;
     public int health;
 
     private GameManager manager;
@@ -17,8 +20,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
+
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
+        speed = startSpeed + 0.05f * manager.round;
+        health = (int) (startingHealth * Mathf.Pow(2, manager.round / 20));
 
         Transform[] waypointsTemp = new Transform[GameObject.Find(dimension).transform.GetChild(0).childCount];
         for (int i = 0; i < GameObject.Find(dimension).transform.GetChild(0).childCount; i++)
