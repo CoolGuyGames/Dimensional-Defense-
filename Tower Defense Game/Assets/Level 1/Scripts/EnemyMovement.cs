@@ -64,9 +64,10 @@ public class EnemyMovement : MonoBehaviour
     {
         exploding = true;
         this.transform.GetComponentInChildren<ParticleSystem>().Play();
-        this.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        this.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
         this.transform.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.3f);
-        Destroy(this);
+        Destroy(this.gameObject);
+        exploding = false;
     }
 }
