@@ -17,7 +17,7 @@ public class TowerSelectorIconScript : MonoBehaviour
         Tower script = tower.GetComponent<Tower>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         cost = tower.GetComponent<Tower>().cost;
-        text.text = "Base Damage: " + script.damage + "\nAttack Speed: " + script.shootDelay + "\nRange: " + script.radius + "\nDimension: " + script.dimension + "\nCost: " + script.cost;
+        text.text = "Damage: " + script.damage + "\nAttack Speed: " + script.shootDelay + "\nRange: " + script.radius + "\nDimension: " + script.dimension + "\nCost: " + script.cost;
     }
     public void BuyTower()
     {

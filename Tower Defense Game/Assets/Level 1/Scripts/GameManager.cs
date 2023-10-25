@@ -19,15 +19,19 @@ public class GameManager : MonoBehaviour
 
     private bool roundInProgress = false;
 
+    public float timeWarp;
+
     public TMP_Text roundChangeText;
 
     private void Start()
     {
-        Time.timeScale = 2f;
+        
     }
 
     private void Update()
     {
+        Time.timeScale = timeWarp;
+
         roundChangeText.text = "Round " + round;
         if (!roundInProgress)
         {

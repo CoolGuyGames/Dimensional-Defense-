@@ -9,14 +9,26 @@ public class Tower : MonoBehaviour
 
     public GameObject projectile;
     public GameObject radiusObject;
+
+    public float startingShootDelay;
     public float shootDelay;
+
+    public float startingProjectileSpeed;
     public float projectileSpeed;
+
     public string dimension;
+
+    public int startingDamage;
     public int damage;
+
+    public int startingCost;
     public int cost;
 
+    public string towerName;
 
+    public float startingRadius;
     public float radius;
+
     private bool canShoot = true;
     public bool isHeld;
     private bool canPlace = true;
@@ -30,9 +42,12 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
     void Update()
     {
+        Upgrades();
+
         goToCursor();
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -113,6 +128,7 @@ public class Tower : MonoBehaviour
             {
                 isHeld = false;
                 PlaceParticles();
+                PlayerPrefs.SetInt(towerName + "totalPlaces", PlayerPrefs.GetInt(towerName + "totalPlaces") + 1);
             }
             else if(Input.GetKeyDown(KeyCode.Mouse1))
             {
@@ -156,6 +172,16 @@ public class Tower : MonoBehaviour
     private void PlaceParticles()
     {
         partSystem.Play();
+    }
+
+    public void Upgrades()
+    {
+        cost = 10 * (int) (Mathf.Pow(1.5f, PlayerPrefs.GetInt(towerName + "totalPlaces") + 1));
+        damage = startingDamage * (int) (Mathf.Pow(1.2f, PlayerPrefs.GetInt(towerName + "Damage" + "Level")));
+        shootDelay = startingShootDelay * Mathf.Pow(0.9f, PlayerPrefs.GetInt(towerName + "ShootDelay" + "Level"));
+        projectileSpeed = startingProjectileSpeed + PlayerPrefs.GetInt(towerName + "ProjectileSpeed" + "Level");
+        radius = startingRadius +  0.1f * PlayerPrefs.GetInt(towerName + "Radius" + "Level");
+
     }
 
 }
