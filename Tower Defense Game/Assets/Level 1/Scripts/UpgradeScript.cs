@@ -32,9 +32,6 @@ public class UpgradeScript : MonoBehaviour
             }
 
         }
-
-        Debug.Log((int) Mathf.Pow(1.5f, (PlayerPrefs.GetInt("FloraDamageLevel"))));
-        Debug.Log(PlayerPrefs.GetInt("FloraDamageCost"));
     }
     public void Upgrade(string towerThenUpgrade)
     {

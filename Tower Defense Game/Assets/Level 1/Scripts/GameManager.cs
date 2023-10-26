@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.UIElements;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,10 +20,11 @@ public class GameManager : MonoBehaviour
     private bool roundInProgress = false;
 
     public float timeWarp;
+    public Text timeWarpText;
 
     public TMP_Text roundChangeText;
 
-    private float spawnDelay;
+    private float spawnDelay = 3;
 
     private void Start()
     {
@@ -32,9 +33,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        timeWarpText.text = timeWarp.ToString() + "x";
+
         if(spawnDelay > 0.1f)
         {
-            spawnDelay = 2 * Mathf.Pow(1.05f, -1 * round);
+            spawnDelay = 3 - 0.1f * (round - 4);
         }
         else
         {
@@ -92,5 +95,21 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         roundChangeText.gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);
+    }
+
+    public void IncreaseSpeed()
+    {
+        if(timeWarp < 3.5f)
+        {
+            timeWarp += 0.5f;
+        }
+    }
+
+    public void DecraseSpeed()
+    {
+        if(timeWarp > 0f)
+        {
+            timeWarp -= 0.5f;
+        }
     }
 }

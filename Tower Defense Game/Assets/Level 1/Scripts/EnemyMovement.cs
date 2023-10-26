@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         speed = startSpeed + 0.05f * manager.round;
-        health = (int) (startingHealth * Mathf.Pow(2, manager.round / 10.0f));
+        health = (int) (startingHealth * Mathf.Pow(2, manager.round / 5.0f));
 
         Transform[] waypointsTemp = new Transform[GameObject.Find(dimension).transform.GetChild(0).childCount];
         for (int i = 0; i < GameObject.Find(dimension).transform.GetChild(0).childCount; i++)

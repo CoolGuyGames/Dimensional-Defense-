@@ -46,7 +46,7 @@ public class TowerSelectorIconScript : MonoBehaviour
     }
     public void BuyTower()
     {
-        if (gameManager.money >= cost)
+        if (gameManager.money >= cost && gameManager.timeWarp > 0)
         {
             gameManager.money -= cost;
             Instantiate(tower);
