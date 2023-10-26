@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text roundChangeText;
 
+    private float spawnDelay;
+
     private void Start()
     {
         
@@ -30,6 +32,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(spawnDelay > 0.1f)
+        {
+            spawnDelay = 2 * Mathf.Pow(1.05f, -1 * round);
+        }
+        else
+        {
+            spawnDelay = 0.1f;
+        }
+
         Time.timeScale = timeWarp;
 
         roundChangeText.text = "Round " + round;
@@ -63,7 +74,7 @@ public class GameManager : MonoBehaviour
             for(int i = 0; i < round * 2; i++) 
             {
                 Instantiate(enemies[Random.Range(0, enemies.Length)]);
-                yield return new WaitForSeconds(2 * Mathf.Pow(1.05f, -1 * round));
+                yield return new WaitForSeconds(spawnDelay);
             }
         }
         

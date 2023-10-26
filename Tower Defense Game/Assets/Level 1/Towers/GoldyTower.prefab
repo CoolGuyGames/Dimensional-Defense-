@@ -51,11 +51,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: 106020cd59a08db4aa174b8fe8b7287d, type: 3}
   radiusObject: {fileID: 5216793542830326417}
+  startingShootDelay: 1
   shootDelay: 1
+  startingProjectileSpeed: 50
   projectileSpeed: 50
   dimension: Water
+  startingDamage: 2
   damage: 2
+  startingCost: 10
   cost: 10
+  towerName: Goldy
+  startingRadius: 2
   radius: 2
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}

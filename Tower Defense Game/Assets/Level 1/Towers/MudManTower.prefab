@@ -51,11 +51,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: ece573b65c53dd641a2b6c423252687e, type: 3}
   radiusObject: {fileID: 5216793542830326417}
+  startingShootDelay: 1
   shootDelay: 1
+  startingProjectileSpeed: 50
   projectileSpeed: 50
   dimension: Earth
+  startingDamage: 2
   damage: 2
+  startingCost: 10
   cost: 10
+  towerName: Mudman
+  startingRadius: 2
   radius: 2
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}

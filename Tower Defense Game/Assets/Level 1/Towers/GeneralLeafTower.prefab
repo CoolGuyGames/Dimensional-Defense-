@@ -51,11 +51,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: aaa0eb581d9820745a60d278e1c2ccef, type: 3}
   radiusObject: {fileID: 5216793542830326417}
+  startingShootDelay: 1
   shootDelay: 1
+  startingProjectileSpeed: 20
   projectileSpeed: 20
   dimension: Earth
+  startingDamage: 2
   damage: 2
+  startingCost: 10
   cost: 10
+  towerName: GeneralLee
+  startingRadius: 3.2
   radius: 3.2
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}

@@ -16,8 +16,8 @@ public class UpgradeScript : MonoBehaviour
         {
             for(int j = 0; j < Upgrades.Length; j++)
             {
-                PlayerPrefs.SetInt(Towers[i] + Upgrades[j] + "Cost", 10);
                 PlayerPrefs.SetInt(Towers[i] + Upgrades[j] + "Level", 0);
+                PlayerPrefs.SetInt(Towers[i] + "totalPlaces", 0);
             }
 
         }
@@ -28,22 +28,22 @@ public class UpgradeScript : MonoBehaviour
         {
             for (int j = 0; j < Upgrades.Length; j++)
             {
-                PlayerPrefs.SetInt(Towers[i] + Upgrades[j] + "Cost", (int) (PlayerPrefs.GetInt(Towers[i] + Upgrades[j] + "Level") * 1.2 + 10));
+                PlayerPrefs.SetInt(Towers[i] + Upgrades[j] + "Cost", (int)(Mathf.Pow(1.5f, (PlayerPrefs.GetInt(Towers[i] + Upgrades[j] + "Level"))) * 10));
             }
 
         }
+
+        Debug.Log((int) Mathf.Pow(1.5f, (PlayerPrefs.GetInt("FloraDamageLevel"))));
+        Debug.Log(PlayerPrefs.GetInt("FloraDamageCost"));
     }
-    public void Upgrade(string tower, string upgrade)
+    public void Upgrade(string towerThenUpgrade)
     {
-        if(PlayerPrefs.GetInt(tower + upgrade + "Cost") <= gameManager.money)
+        string[] towerUpgrade = towerThenUpgrade.Split(' ');
+
+        if(PlayerPrefs.GetInt(towerUpgrade[0] + towerUpgrade[1] + "Cost") <= gameManager.money)
         {
-            gameManager.money -= PlayerPrefs.GetInt(tower + upgrade + "Cost");
-            PlayerPrefs.SetInt(tower + upgrade + "Level", PlayerPrefs.GetInt(tower + upgrade + "Level") + 1);
+            gameManager.money -= PlayerPrefs.GetInt(towerUpgrade[0] + towerUpgrade[1] + "Cost");
+            PlayerPrefs.SetInt(towerUpgrade[0] + towerUpgrade[1] + "Level", PlayerPrefs.GetInt(towerUpgrade[0] + towerUpgrade[1] + "Level") + 1);
         }
-    }
-
-    public void Nothing()
-    {
-
     }
 }

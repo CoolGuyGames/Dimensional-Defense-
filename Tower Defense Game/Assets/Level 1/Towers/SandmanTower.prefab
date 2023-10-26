@@ -51,11 +51,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: 2f059f6e522175e499a3324fa10df000, type: 3}
   radiusObject: {fileID: 5216793542830326417}
+  startingShootDelay: 1
   shootDelay: 1
+  startingProjectileSpeed: 50
   projectileSpeed: 50
   dimension: Earth
+  startingDamage: 1
   damage: 1
+  startingCost: 10
   cost: 10
+  towerName: Sandman
+  startingRadius: 3
   radius: 3
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}

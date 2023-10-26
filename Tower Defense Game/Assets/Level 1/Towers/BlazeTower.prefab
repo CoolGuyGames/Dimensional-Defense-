@@ -125,11 +125,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: 29ed83ec25e01ea439c28048318397ff, type: 3}
   radiusObject: {fileID: 5216793542830326417}
+  startingShootDelay: 3
   shootDelay: 3
+  startingProjectileSpeed: 50
   projectileSpeed: 50
   dimension: Fire
+  startingDamage: 4
   damage: 4
+  startingCost: 10
   cost: 10
+  towerName: Blaze
+  startingRadius: 4
   radius: 4
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}

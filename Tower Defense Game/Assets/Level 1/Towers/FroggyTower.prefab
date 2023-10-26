@@ -51,11 +51,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: 20a955ca617b2d74da63dce502445dda, type: 3}
   radiusObject: {fileID: 5216793542830326417}
+  startingShootDelay: 1
   shootDelay: 1
+  startingProjectileSpeed: 60
   projectileSpeed: 50
   dimension: Earth
+  startingDamage: 1
   damage: 1
+  startingCost: 10
   cost: 10
+  towerName: Froggy
+  startingRadius: 3
   radius: 3
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}
