@@ -132,7 +132,7 @@ MonoBehaviour:
   dimension: Fire
   startingDamage: 4
   damage: 4
-  startingCost: 10
+  startingCost: 20
   cost: 10
   towerName: Blaze
   startingRadius: 4

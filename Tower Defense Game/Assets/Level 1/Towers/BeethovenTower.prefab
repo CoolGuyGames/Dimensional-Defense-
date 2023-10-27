@@ -49,15 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5556fe464d26c4d926d09a3a8edcbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 9064234464164679142, guid: 21ad3dd6656e7834ba9a0cda0b9dbccb, type: 3}
+  projectile: {fileID: 9064234464164679142, guid: 4fc3f376488350f4f87886cd363f96a7, type: 3}
   radiusObject: {fileID: 5216793542830326417}
-  startingShootDelay: 1
+  startingShootDelay: 0.5
   shootDelay: 1
   startingProjectileSpeed: 50
   projectileSpeed: 50
   dimension: Air
-  startingDamage: 2
-  damage: 2
+  startingDamage: 1
+  damage: 1
   startingCost: 10
   cost: 10
   towerName: Beethoven
@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216793542830326417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.005, y: -0.066, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 5216793542023324506}

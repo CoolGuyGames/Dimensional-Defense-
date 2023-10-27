@@ -51,13 +51,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9064234464164679142, guid: aaa0eb581d9820745a60d278e1c2ccef, type: 3}
   radiusObject: {fileID: 5216793542830326417}
-  startingShootDelay: 1
-  shootDelay: 1
-  startingProjectileSpeed: 20
-  projectileSpeed: 20
+  startingShootDelay: 2
+  shootDelay: 2
+  startingProjectileSpeed: 10
+  projectileSpeed: 10
   dimension: Earth
-  startingDamage: 2
-  damage: 2
+  startingDamage: 4
+  damage: 4
   startingCost: 10
   cost: 10
   towerName: GeneralLeaf

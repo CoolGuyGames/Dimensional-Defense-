@@ -31,7 +31,7 @@ public class TowerSelectorIconScript : MonoBehaviour
     private void Update()
     {
        
-        text.text = "Damage: " + damage + "\nAttack Speed: " + shootDelay + "\nRange: " + radius + "\nProjectile Speed: " + projectileSpeed + "\nDimension: " + script.dimension + "\nCost: " + cost;
+        text.text = "Damage: " + damage + "\nAttack Speed: " + shootDelay + "\nRange: " + radius + "\nDimension: " + script.dimension + "\nCost: " + cost;
 
         cost = 10 * (int)(Mathf.Pow(1.5f, PlayerPrefs.GetInt(script.towerName + "totalPlaces") + 1));
         damage = script.startingDamage * (int)(Mathf.Pow(1.2f, PlayerPrefs.GetInt(script.towerName + "Damage" + "Level"))) + PlayerPrefs.GetInt(script.towerName + "Damage" + "Level");
@@ -42,7 +42,6 @@ public class TowerSelectorIconScript : MonoBehaviour
         upgradeCosts[0].text = PlayerPrefs.GetInt(script.towerName + "Damage" + "Cost").ToString();
         upgradeCosts[1].text = PlayerPrefs.GetInt(script.towerName + "ShootDelay" + "Cost").ToString();
         upgradeCosts[2].text = PlayerPrefs.GetInt(script.towerName + "Radius" + "Cost").ToString();
-        upgradeCosts[3].text = PlayerPrefs.GetInt(script.towerName + "ProjectileSpeed" + "Cost").ToString();
     }
     public void BuyTower()
     {

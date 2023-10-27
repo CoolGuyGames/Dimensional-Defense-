@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5222881180088889379}
   - component: {fileID: -6121531272354049516}
   m_Layer: 0
-  m_Name: KelpieTower
+  m_Name: FiremanTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,18 +49,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5556fe464d26c4d926d09a3a8edcbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 9064234464164679142, guid: 4e7286791624fea4581c95978bd8978f, type: 3}
+  projectile: {fileID: 9064234464164679142, guid: d3037f7778719eb4a9d1671ee4fe1c7f, type: 3}
   radiusObject: {fileID: 5216793542830326417}
-  startingShootDelay: 1
+  startingShootDelay: 0.5
   shootDelay: 1
-  startingProjectileSpeed: 50
-  projectileSpeed: 50
-  dimension: Water
+  startingProjectileSpeed: 20
+  projectileSpeed: 20
+  dimension: Fire
   startingDamage: 1
   damage: 1
-  startingCost: 10
-  cost: 10
-  towerName: Kelpie
+  startingCost: 15
+  cost: 15
+  towerName: Fireman
   startingRadius: 3
   radius: 3
   isHeld: 1
@@ -79,9 +79,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.000705719}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.5654144
 --- !u!50 &5222881180088889379
 Rigidbody2D:
   serializedVersion: 4
@@ -116,9 +116,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0014119148}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.56470823
 --- !u!1 &5216793542830326417
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,8 +226,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7434529340350677416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0, z: 0}
-  m_LocalScale: {x: 0.24655746, y: 0.24655746, z: 0.24655746}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2133559, y: 0.2133559, z: 0.2133559}
   m_Children: []
   m_Father: {fileID: 5216793542023324506}
   m_RootOrder: 1
@@ -272,7 +272,7 @@ SpriteRenderer:
   m_SortingLayerID: -817054345
   m_SortingLayer: 7
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6fcfb9a19797b004b980a0e18e91aac4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20a184db419e71942b26df4c75c5b063, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 1007348068108806507, guid: b2ff42c723842924e8afb1e4b11c176c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e190004a8a5f5514091c5d0470046e14, type: 2}
+      objectReference: {fileID: 2100000, guid: dcd40b374a7c70c4dae8c124c0593e5a, type: 2}
     - target: {fileID: 3271374371419682195, guid: b2ff42c723842924e8afb1e4b11c176c, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5222881180088889379}
   - component: {fileID: -6121531272354049516}
   m_Layer: 0
-  m_Name: KelpieTower
+  m_Name: HaileyTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,12 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216793542023324504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.92, y: -9.07, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5216793542830326418}
   - {fileID: 519534581219438208}
-  - {fileID: 8454166423169970709}
+  - {fileID: 3729446246737468429}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,23 +49,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5556fe464d26c4d926d09a3a8edcbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 9064234464164679142, guid: 4e7286791624fea4581c95978bd8978f, type: 3}
+  projectile: {fileID: 9064234464164679142, guid: 4766132adab0a1e4fb671275b998ca52, type: 3}
   radiusObject: {fileID: 5216793542830326417}
-  startingShootDelay: 1
-  shootDelay: 1
-  startingProjectileSpeed: 50
-  projectileSpeed: 50
-  dimension: Water
-  startingDamage: 1
-  damage: 1
-  startingCost: 10
-  cost: 10
-  towerName: Kelpie
-  startingRadius: 3
-  radius: 3
+  startingShootDelay: 2
+  shootDelay: 2
+  startingProjectileSpeed: 70
+  projectileSpeed: 70
+  dimension: Air
+  startingDamage: 3
+  damage: 3
+  startingCost: 15
+  cost: 15
+  towerName: Hailey
+  startingRadius: 5
+  radius: 5
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}
-  partSystem: {fileID: 5414685603515298028}
+  partSystem: {fileID: 988064948717657844}
 --- !u!58 &5216793542023324507
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -79,9 +79,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0020914078}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.41357148
 --- !u!50 &5222881180088889379
 Rigidbody2D:
   serializedVersion: 4
@@ -116,9 +116,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0021330416}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.41168723
 --- !u!1 &5216793542830326417
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,8 +226,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7434529340350677416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0, z: 0}
-  m_LocalScale: {x: 0.24655746, y: 0.24655746, z: 0.24655746}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.22575998, y: 0.22575998, z: 0.22575998}
   m_Children: []
   m_Father: {fileID: 5216793542023324506}
   m_RootOrder: 1
@@ -272,7 +272,7 @@ SpriteRenderer:
   m_SortingLayerID: -817054345
   m_SortingLayer: 7
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6fcfb9a19797b004b980a0e18e91aac4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4cab91a0af58964792d24d293a43f8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -283,7 +283,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &6356120835859531654
+--- !u!1001 &2208987247330077086
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 1007348068108806507, guid: b2ff42c723842924e8afb1e4b11c176c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e190004a8a5f5514091c5d0470046e14, type: 2}
+      objectReference: {fileID: 2100000, guid: ab93d14950f3beb43b2982f6bca4bfb0, type: 2}
     - target: {fileID: 3271374371419682195, guid: b2ff42c723842924e8afb1e4b11c176c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -344,13 +344,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2ff42c723842924e8afb1e4b11c176c, type: 3}
---- !u!4 &8454166423169970709 stripped
+--- !u!4 &3729446246737468429 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3271374371419682195, guid: b2ff42c723842924e8afb1e4b11c176c, type: 3}
-  m_PrefabInstance: {fileID: 6356120835859531654}
+  m_PrefabInstance: {fileID: 2208987247330077086}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &5414685603515298028 stripped
+--- !u!198 &988064948717657844 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1374066172624811882, guid: b2ff42c723842924e8afb1e4b11c176c, type: 3}
-  m_PrefabInstance: {fileID: 6356120835859531654}
+  m_PrefabInstance: {fileID: 2208987247330077086}
   m_PrefabAsset: {fileID: 0}

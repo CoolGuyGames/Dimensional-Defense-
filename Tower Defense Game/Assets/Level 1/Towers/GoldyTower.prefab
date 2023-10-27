@@ -58,11 +58,11 @@ MonoBehaviour:
   dimension: Water
   startingDamage: 2
   damage: 2
-  startingCost: 10
-  cost: 10
+  startingCost: 12
+  cost: 12
   towerName: Goldy
-  startingRadius: 2
-  radius: 2
+  startingRadius: 3
+  radius: 3
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}
   partSystem: {fileID: 9093989668628286977}

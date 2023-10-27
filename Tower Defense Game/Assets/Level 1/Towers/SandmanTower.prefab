@@ -55,7 +55,7 @@ MonoBehaviour:
   shootDelay: 1
   startingProjectileSpeed: 50
   projectileSpeed: 50
-  dimension: Earth
+  dimension: Water
   startingDamage: 1
   damage: 1
   startingCost: 10

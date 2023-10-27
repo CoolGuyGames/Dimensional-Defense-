@@ -56,13 +56,13 @@ MonoBehaviour:
   startingProjectileSpeed: 25
   projectileSpeed: 25
   dimension: Earth
-  startingDamage: 2
-  damage: 2
-  startingCost: 10
-  cost: 10
+  startingDamage: 3
+  damage: 3
+  startingCost: 20
+  cost: 20
   towerName: Flora
-  startingRadius: 4
-  radius: 4
+  startingRadius: 3
+  radius: 3
   isHeld: 1
   towerCollider: {fileID: -6121531272354049516}
   partSystem: {fileID: 2391954569333316229}
