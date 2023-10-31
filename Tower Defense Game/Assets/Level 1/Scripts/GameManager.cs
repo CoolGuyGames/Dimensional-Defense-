@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
     public TMP_Text roundText;
     public TMP_Text pointsText;
     public TMP_Text livesText;

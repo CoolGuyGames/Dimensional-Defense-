@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    public string[] dimensions = { "Air", "Fire", "Earth", "Water" };
+    private CameraControls cameraControls;
+
     GameObject[] enemies;
     GameObject closestEnemy = null;
 
@@ -42,6 +45,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        cameraControls = GameObject.Find("Main Camera").GetComponent<CameraControls>();
         
     }
     void Update()
@@ -145,6 +149,7 @@ public class Tower : MonoBehaviour
             inContactWith++;
             radiusObject.GetComponent<SpriteRenderer>().color = new Color32(255, 0, 0, 76);
         }
+        
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -153,18 +158,28 @@ public class Tower : MonoBehaviour
             canPlace = false;
             radiusObject.GetComponent<SpriteRenderer>().color = new Color32 (255, 0, 0, 76);
         }
+        if (collision.CompareTag("placeable") && inContactWith == 0)
+        {
+            canPlace = true;
+            radiusObject.GetComponent<SpriteRenderer>().color = new Color32(149, 149, 149, 76);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("noplace") || collision.CompareTag("Tower"))
         {
-            if(inContactWith == 1)
+            inContactWith--;
+            if(dimension == dimensions[cameraControls.currentLocation])
             {
                 canPlace = true;
                 radiusObject.GetComponent<SpriteRenderer>().color = new Color32(149, 149, 149, 76);
             }
-            inContactWith--;
+        }
+        if (collision.CompareTag("placeable") && dimension != dimensions[cameraControls.currentLocation])
+        {
+            canPlace = false;
+            radiusObject.GetComponent<SpriteRenderer>().color = new Color32(255, 0, 0, 76);
         }
     }
 
