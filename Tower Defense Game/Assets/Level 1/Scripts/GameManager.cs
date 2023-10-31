@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public TMP_Text pointsRoundText;
+    public TMP_Text roundText;
+    public TMP_Text pointsText;
+    public TMP_Text livesText;
+
     public GameObject gameOver;
 
     public int money;
@@ -35,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         timeWarpText.text = timeWarp.ToString() + "x";
 
-        if(spawnDelay > 0.1f)
+        if(spawnDelay > 0.5f)
         {
             spawnDelay = 3 - 0.1f * (round - 4);
         }
@@ -52,7 +55,9 @@ public class GameManager : MonoBehaviour
             StartCoroutine("RoundSpawner");
         }
 
-        pointsRoundText.text = "Points: " + money + "\n" + "Round: " + round + "\n" + "Lives: " + lives;
+        pointsText.text = "Points: " + money;
+        roundText.text = "Round: " + round;
+        livesText.text = "Lives: " + lives;
 
         if (lives <= 0)
         {

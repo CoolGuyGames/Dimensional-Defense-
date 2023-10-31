@@ -176,9 +176,9 @@ public class Tower : MonoBehaviour
 
     public void Upgrades()
     {
-        cost = 10 * (int) (Mathf.Pow(1.5f, PlayerPrefs.GetInt(towerName + "totalPlaces") + 1));
+        cost = startingCost * (int) (Mathf.Pow(1.5f, PlayerPrefs.GetInt(towerName + "totalPlaces") + 1));
         damage = startingDamage * (int) (Mathf.Pow(1.5f, PlayerPrefs.GetInt(towerName + "Damage" + "Level"))) + PlayerPrefs.GetInt(towerName + "Damage" + "Level");
-        shootDelay = startingShootDelay * Mathf.Pow(0.9f, PlayerPrefs.GetInt(towerName + "ShootDelay" + "Level"));
+        shootDelay = startingShootDelay * Mathf.Pow(0.5f, PlayerPrefs.GetInt(towerName + "ShootDelay" + "Level") / 4.0f);
         projectileSpeed = startingProjectileSpeed + PlayerPrefs.GetInt(towerName + "ProjectileSpeed" + "Level");
         radius = startingRadius +  0.1f * PlayerPrefs.GetInt(towerName + "Radius" + "Level");
 
