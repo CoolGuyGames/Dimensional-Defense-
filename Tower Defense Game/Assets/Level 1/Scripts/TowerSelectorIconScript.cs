@@ -10,6 +10,8 @@ public class TowerSelectorIconScript : MonoBehaviour
     private int cost;
 
     private GameManager gameManager;
+    private string[] strongDimensions = { "Water", "Fire", "Earth", "Air" };
+    private string strongAgainst;
 
     public TMP_Text text;
 
@@ -26,11 +28,19 @@ public class TowerSelectorIconScript : MonoBehaviour
     {
         script = tower.GetComponent<Tower>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        for (int i = 0; i < strongDimensions.Length; i++)
+        {
+            if (strongDimensions[i] == script.dimension)
+            {
+                strongAgainst = strongDimensions[(i + 1) % 4];
+            }
+        }
     }
 
     private void Update()
     {
-        text.text = "Damage: " + damage + "\nAttack Speed: " + shootDelay.ToString("0.00") + "\nRange: " + radius + "\nDimension: " + script.dimension + "\nCost: " + cost;
+        text.text = "Damage: " + damage + "\nAttack Speed: " + shootDelay.ToString("0.00") + "\nRange: " + radius + "\nDimension: " + script.dimension + "\nStrong Against: " + strongAgainst + "\nCost: " + cost;
 
         cost = script.startingCost * (int)(Mathf.Pow(1.5f, PlayerPrefs.GetInt(script.towerName + "totalPlaces") + 1));
         damage = script.startingDamage * (int)(Mathf.Pow(1.2f, PlayerPrefs.GetInt(script.towerName + "Damage" + "Level"))) + PlayerPrefs.GetInt(script.towerName + "Damage" + "Level");

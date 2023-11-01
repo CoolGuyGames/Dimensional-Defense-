@@ -5,6 +5,9 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     public string[] dimensions = { "Air", "Fire", "Earth", "Water" };
+
+    public string strongAgainst;
+
     private CameraControls cameraControls;
 
     GameObject[] enemies;
@@ -46,7 +49,8 @@ public class Tower : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         cameraControls = GameObject.Find("Main Camera").GetComponent<CameraControls>();
-        
+
+
     }
     void Update()
     {

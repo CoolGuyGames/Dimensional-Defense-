@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            spawnDelay = 0.1f;
+            spawnDelay = 0.5f;
         }
 
         Time.timeScale = timeWarp;
@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         roundChangeText.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
+        money += 2 * round;
         round++;
         yield return new WaitForSeconds(1f);
         roundChangeText.gameObject.SetActive(false);

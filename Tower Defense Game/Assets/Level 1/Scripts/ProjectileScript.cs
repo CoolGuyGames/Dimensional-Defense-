@@ -6,12 +6,21 @@ public class ProjectileScript : MonoBehaviour
 {
     public int damage;
     public string dimension;
+    public string strongAgainst;
+    private string[] dimensions = { "Water", "Fire", "Earth", "Air" };
 
     private ParticleSystem explosionParticles;
 
     private void Start()
     {
         StartCoroutine(DestroyTimed());
+        for(int i = 0; i < dimensions.Length; i++)
+        {
+            if (dimensions[i] == dimension)
+            {
+                strongAgainst = dimensions[(i + 1) % 4];
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,7 +37,7 @@ public class ProjectileScript : MonoBehaviour
             if(this.transform.Find("Trail") != null)
                 this.transform.Find("Trail").gameObject.SetActive(false);
             this.GetComponent<SpriteRenderer>().enabled = false;
-            if (dimension == collision.GetComponent<EnemyMovement>().dimension)
+            if (strongAgainst == collision.GetComponent<EnemyMovement>().dimension)
                 collision.GetComponent<EnemyMovement>().health -= damage * 2;
             else
                 collision.GetComponent<EnemyMovement>().health -= damage;
